@@ -248,7 +248,7 @@ This project is for educational purposes as part of CSCI426 Advanced Web Program
 
 ## Contact
 For any questions or issues, please contact:
-- Email: your.email@example.com
+- Email: joeyfenianos@gmail.com
 - GitHub: https://github.com/joeyfinianos
 
 ---
