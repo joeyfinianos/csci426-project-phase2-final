@@ -1,0 +1,171 @@
+/* ../assets/ProductCard.css */
+
+.card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06),
+    0 0 0 1px rgba(226, 232, 240, 0.8);
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+  height: fit-content;
+  backdrop-filter: blur(10px);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6, #60a5fa, #3b82f6);
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    0 25px 50px -12px rgba(37, 99, 235, 0.25),
+    0 0 0 1px rgba(37, 99, 235, 0.1);
+  border-color: #3b82f6;
+}
+
+.card-img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #e2e8f0;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+  transition: all 0.3s ease;
+}
+
+.card:hover .card-img {
+  border-color: #3b82f6;
+  transform: scale(1.05);
+}
+
+.card h3 {
+  font-family: 'Inter', sans-serif;
+  color: #1e293b;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 1rem 0 0.5rem 0;
+  line-height: 1.4;
+  min-height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card .author {
+  color: #64748b;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  min-height: 1.5rem;
+}
+
+.card .price {
+  font-family: 'Inter', sans-serif;
+  color: #1e293b;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 1rem 0;
+  text-align: center;
+  background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.genre-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+  color: #ffffff;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  border: 1px solid #3b82f6;
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.buy-btn {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  border: none;
+  padding: 0.9rem 1.5rem;
+  border-radius: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid #10b981;
+  width: 100%;
+  margin-top: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.5px;
+}
+
+.buy-btn:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
+  border-color: #059669;
+}
+
+.buy-btn:active {
+  transform: translateY(0);
+}
+
+.buy-btn::before {
+  content: "🛒";
+  margin-right: 8px;
+  font-size: 1rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .card {
+    padding: 1.25rem;
+  }
+  
+  .card h3 {
+    font-size: 1.3rem;
+    min-height: 3rem;
+  }
+  
+  .card-img {
+    height: 240px;
+  }
+}
+
+/* Loading state */
+.card.loading {
+  background: linear-gradient(90deg, #f1f5f9 25%, #f8fafc 50%, #f1f5f9 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
